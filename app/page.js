@@ -1,18 +1,52 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+"use client";
 
-export default function BoxBasic() {
+import {
+  Container,
+  Typography,
+  Button,
+  Box,
+  Stack,
+} from "@mui/material";
+import Link from "next/link";
+
+export default function HomePage() {
   return (
-    <main>
-      <Box component="section" className="border border-gray-800 m-5 text-center">
-        <h1 className="text-3xl text-violet-950">Stock Management v1.0</h1>
-        <ul>
-          <li><a href="/product">Products</a></li>
-          <li><a href="/category">Category</a></li>
-        </ul>
-        
+    <Container maxWidth="sm">
+      <Box
+        mt={8}
+        p={4}
+        border={1}
+        borderColor="grey.400"
+        borderRadius={2}
+        textAlign="center"
+      >
+        <Typography variant="h3" color="primary" gutterBottom>
+          Customer Management v1.0
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          Welcome! This is the final exam app.  
+          Manage customers — add, view, edit, and delete records.
+        </Typography>
+
+        <Stack direction="column" spacing={2} mt={3}>
+          <Button
+            component={Link}
+            href="/customer"
+            variant="contained"
+            color="primary"
+          >
+            View Customers
+          </Button>
+          <Button
+            component={Link}
+            href="/customer/add"
+            variant="outlined"
+            color="success"
+          >
+            Add Customer
+          </Button>
+        </Stack>
       </Box>
-    </main>
+    </Container>
   );
 }
